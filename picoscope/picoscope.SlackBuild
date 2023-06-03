@@ -50,10 +50,6 @@ for FILE in *.rpm ; do
 done
 mv etc opt usr $PKG
 
-# Symlink the application to usr/bin
-mkdir $PKG/usr/bin
-ln -s $PKG/opt/picoscope/bin/picoscope $PKG/usr/bin/picoscope
-
 # Fix permissions.
 chown -R root:root $PKG
 find -L $PKG \
