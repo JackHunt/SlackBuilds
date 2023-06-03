@@ -45,19 +45,14 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 
 # Extract all the rpm's.
-for FILE in *.rpm ; do rpm2cpio < $FILE | cpio -imdv ; done
+for FILE in *.rpm ; do
+    rpm2cpio < $FILE | cpio -imdv
+done
 mv etc opt usr $PKG
-
-# For some unexplaned and non-understood reason, they distribute
-# windows dll's and exe's in their rpm's.
-#find $PKG -type f \( -name "*.dll" -o -name "*.exe" \) -exec rm -f {} \;
 
 # Symlink the application to usr/bin
 mkdir $PKG/usr/bin
 ln -s $PKG/opt/picoscope/bin/picoscope $PKG/usr/bin/picoscope
-
-# Prune any empty directories.
-#find $PKG -type d -empty -delete
 
 # Fix permissions.
 chown -R root:root $PKG
