@@ -31,6 +31,6 @@ https://labs.picotech.com/picoscope7/rpm/x86_64/libps6000a-1.0.113-0r3501.x86_64
 https://labs.picotech.com/picoscope7/rpm/x86_64/libseafire-1.0.81-0r3207.x86_64.rpm \
 https://labs.picotech.com/picoscope7/rpm/x86_64/picoscope-7.1.2-1r15463.x86_64.rpm"
 MD5SUM_x86_64=""
-REQUIRES="zulu-openjdk8 avahi"
+REQUIRES="mono gtk-sharp"
 MAINTAINER="Jack Hunt"
 EMAIL="jackmileshunt@gmail.com"
